@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - Stats</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">FitTrack</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
+                <li><a href="stats.html" class="active">Stats</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="stats-summary">
+            <h2>Statistics Overview</h2>
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <h3>This Week</h3>
+                    <div class="summary-stat">
+                        <div class="summary-value" id="week-workouts">0</div>
+                        <div class="summary-label">Workouts</div>
+                    </div>
+                    <div class="summary-stat">
+                        <div class="summary-value" id="week-calories">0</div>
+                        <div class="summary-label">Calories</div>
+                    </div>
+                    <div class="summary-stat">
+                        <div class="summary-value" id="week-duration">0</div>
+                        <div class="summary-label">Minutes</div>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <h3>This Month</h3>
+                    <div class="summary-stat">
+                        <div class="summary-value" id="month-workouts">0</div>
+                        <div class="summary-label">Workouts</div>
+                    </div>
+                    <div class="summary-stat">
+                        <div class="summary-value" id="month-calories">0</div>
+                        <div class="summary-label">Calories</div>
+                    </div>
+                    <div class="summary-stat">
+                        <div class="summary-value" id="month-duration">0</div>
+                        <div class="summary-label">Minutes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="chart-section">
+            <h2>Weekly Activity Chart</h2>
+            <div class="chart-container">
+                <canvas id="activity-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="workout-types">
+            <h2>Workout Distribution</h2>
+            <div id="workout-types-list" class="types-list"></div>
+        </section>
+    </main>
+
+    <script src="theme.js"></script>
+    <script src="storage.js"></script>
+    <script src="stats.js"></script>
+</body>
+</html>

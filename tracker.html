@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">FitTrack</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracker.html" class="active">Tracker</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="goal-section">
+            <h2>Weekly Goal</h2>
+            <div class="goal-input-group">
+                <input type="number" id="goal-input" placeholder="Set weekly workout goal" min="1" max="50">
+                <button id="set-goal-btn" class="btn btn-small">Set Goal</button>
+            </div>
+            <div class="goal-progress" id="goal-progress" style="display: none;">
+                <div class="progress-info">
+                    <span id="goal-text">Goal: 0 workouts</span>
+                    <span id="goal-current">0 / 0</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="workout-form-section">
+            <h2 id="form-title">Add Workout</h2>
+            <form id="workout-form" class="workout-form">
+                <div class="form-group">
+                    <label for="workout-type">Workout Type</label>
+                    <select id="workout-type" required>
+                        <option value="">Select type</option>
+                        <option value="Running">Running</option>
+                        <option value="Cycling">Cycling</option>
+                        <option value="Swimming">Swimming</option>
+                        <option value="Weightlifting">Weightlifting</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="HIIT">HIIT</option>
+                        <option value="Walking">Walking</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration (minutes)</label>
+                    <input type="number" id="duration" min="1" max="600" required>
+                </div>
+                <div class="form-group">
+                    <label for="calories">Calories Burned</label>
+                    <input type="number" id="calories" min="1" max="5000" required>
+                </div>
+                <div class="form-group">
+                    <label for="workout-date">Date</label>
+                    <input type="date" id="workout-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Notes (optional)</label>
+                    <textarea id="notes" rows="3" maxlength="200"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Add Workout</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-btn" style="display: none;">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="workouts-section">
+            <h2>Your Workouts</h2>
+            <div id="workouts-list" class="workouts-list"></div>
+        </section>
+    </main>
+
+    <script src="theme.js"></script>
+    <script src="storage.js"></script>
+    <script src="tracker.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">FitTrack</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Welcome to FitTrack</h1>
+            <p class="hero-subtitle">Track your fitness journey with ease</p>
+            <div class="hero-actions">
+                <a href="tracker.html" class="btn btn-primary">Start Tracking</a>
+                <a href="stats.html" class="btn btn-secondary">View Stats</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Track Workouts</h3>
+                <p>Log your exercises with duration, calories, and notes</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Set Goals</h3>
+                <p>Define weekly targets and monitor your progress</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>View Analytics</h3>
+                <p>Visualize your performance with charts and summaries</p>
+            </div>
+        </section>
+
+        <section class="quick-stats">
+            <h2>Your Progress</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value" id="total-workouts">0</div>
+                    <div class="stat-label">Total Workouts</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="total-calories">0</div>
+                    <div class="stat-label">Calories Burned</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="this-week">0</div>
+                    <div class="stat-label">This Week</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="theme.js"></script>
+    <script src="storage.js"></script>
+    <script>
+        const workouts = getAllWorkouts();
+        document.getElementById('total-workouts').textContent = workouts.length;
+        
+        const totalCalories = workouts.reduce((sum, w) => sum + w.calories, 0);
+        document.getElementById('total-calories').textContent = totalCalories.toLocaleString();
+        
+        const today = new Date();
+        const weekStart = new Date(today);
+        weekStart.setDate(today.getDate() - today.getDay());
+        weekStart.setHours(0, 0, 0, 0);
+        
+        const thisWeekCount = workouts.filter(w => new Date(w.date) >= weekStart).length;
+        document.getElementById('this-week').textContent = thisWeekCount;
+    </script>
+</body>
+</html>

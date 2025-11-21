@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack - About</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">FitTrack</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tracker.html">Tracker</a></li>
+                <li><a href="stats.html">Stats</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="about-content">
+            <h1>About FitTrack</h1>
+            
+            <div class="about-section">
+                <h2>Project Overview</h2>
+                <p>FitTrack is a modern, client-side fitness tracking application built with vanilla JavaScript, HTML5, and CSS3. It demonstrates proficiency in front-end web development, data management, and user interface design.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Key Features</h2>
+                <ul class="feature-list">
+                    <li><strong>Workout Management:</strong> Add, edit, and delete workout entries with comprehensive details</li>
+                    <li><strong>Goal Setting:</strong> Define weekly workout goals and track progress with visual indicators</li>
+                    <li><strong>Data Visualization:</strong> Custom canvas-based charts showing weekly activity patterns</li>
+                    <li><strong>Persistent Storage:</strong> All data stored locally using localStorage API</li>
+                    <li><strong>Theme System:</strong> Toggle between light and dark modes with preference persistence</li>
+                    <li><strong>Responsive Design:</strong> Fully optimized for mobile, tablet, and desktop devices</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h2>Technical Stack</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <strong>HTML5</strong>
+                        <p>Semantic markup structure</p>
+                    </div>
+                    <div class="tech-item">
+                        <strong>CSS3</strong>
+                        <p>Custom properties, Flexbox, Grid</p>
+                    </div>
+                    <div class="tech-item">
+                        <strong>JavaScript ES6+</strong>
+                        <p>Vanilla JS, localStorage, Canvas API</p>
+                    </div>
+                    <div class="tech-item">
+                        <strong>No Dependencies</strong>
+                        <p>Zero external libraries required</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Development Approach</h2>
+                <p>This project follows best practices in modern web development including modular JavaScript architecture, separation of concerns, mobile-first responsive design, and clean, maintainable code structure suitable for production environments.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Architecture</h2>
+                <ul class="feature-list">
+                    <li><strong>Modular Structure:</strong> Separate files for storage logic, theme management, and page-specific functionality</li>
+                    <li><strong>Data Layer:</strong> Centralized CRUD operations in storage.js</li>
+                    <li><strong>State Management:</strong> localStorage for data persistence across sessions</li>
+                    <li><strong>Canvas Rendering:</strong> Custom chart implementation without third-party libraries</li>
+                </ul>
+            </div>
+
+            <!-- Attribution: added without changing your original structure or behavior -->
+            <div class="about-attribution" aria-hidden="false" style="margin-top:24px;padding:12px;border-radius:8px;background:rgba(0,0,0,0.03);font-size:0.95rem;">
+                <strong>Made by Kapil Shukla</strong> — Built from scratch.
+            </div>
+        </section>
+    </main>
+
+    <script src="theme.js"></script>
+</body>
+</html>
